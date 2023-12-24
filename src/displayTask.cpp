@@ -8,3 +8,14 @@ void displayTaskInit() {
   display.setFont(ArialMT_Plain_10);
 }
 
+void displayRender() {
+  display.display();
+}
+
+
+void displayTest() {
+  display.fillRect(0,0,128,64);
+  displayRender();
+}
+
+

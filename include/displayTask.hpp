@@ -6,3 +6,7 @@
 #define DISP_SCL 22 // SCL pin for the display
 
 void displayTaskInit();
+
+void displayRender();
+
+void displayTest();
