@@ -4,7 +4,6 @@
 bool debug_log; // Flag for logging messages to Serial Terminal
 
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(115200);
 
   // initialize SX1276 with default settings
@@ -21,13 +20,20 @@ void setup() {
   // Initialize display
   displayTaskInit();
 
-
+  // Initialize WiFi 
+  setup_wifi(WIFI_SSID, WIFI_PASSWORD);
+  
+  // Connect to MQTT Broker over WIFI
+  setup_mqtt(MQTT_BROKER_IP, MQTT_BROKER_PORT, DEVICE_ID, MQTT_MANAGEMENT_TOPIC);
   
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   displayTest();
+
+
+  // Keep MQTT Session alive
+  mqtt_keep_alive();
 
   delay(500);
 }

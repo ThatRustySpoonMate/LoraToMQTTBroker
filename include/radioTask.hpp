@@ -7,3 +7,5 @@
 #define DIO1  33
 
 int16_t radioTaskInit();
+
+void setRXFlag(void);
