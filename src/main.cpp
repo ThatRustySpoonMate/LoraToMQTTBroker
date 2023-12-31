@@ -1,6 +1,7 @@
 #include "main.hpp"
 
 
+bool debug_log; // Flag for logging messages to Serial Terminal
 
 void setup() {
   // put your setup code here, to run once:
