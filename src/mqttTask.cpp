@@ -30,6 +30,12 @@ void mqtt_transmit(const char *topic, const char *payload) {
     return;
 }
 
+void mqtt_transmit(const char *topic, const PayloadType *payload) {
+    client.publish(topic, (uint8_t*)payload, 8);
+
+    return;
+}
+
 void mqtt_keep_alive() {
   if (!client.connected()) {
     mqtt_reconnect();
