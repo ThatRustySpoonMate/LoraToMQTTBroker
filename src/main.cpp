@@ -2,7 +2,7 @@
 
 
 bool debug_log; // Flag for logging messages to Serial Terminal
-extern bool loraReceivedFlag;
+extern volatile bool loraReceivedFlag;
 
 void setup() {
   Serial.begin(115200);
